@@ -18,9 +18,7 @@
           </p>
         </div>
       </div>
-      <div class="post-date text-faded">
-        {{post.publishedAt}}
-      </div>
+      <AppDate :timestamp = "post.publishedAt" />
     </div>
   </div>
 </template>

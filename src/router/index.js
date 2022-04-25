@@ -1,17 +1,31 @@
-import PageHome from "@/pages/Home";
+import Home from "@/pages/Home";
 import {createRouter, createWebHistory}  from 'vue-router'
-import PageThreadShow from "@/pages/ThreadShow";
+import ThreadShow from "@/pages/ThreadShow";
 import NotFound from "@/pages/NotFound";
 import sourceData from '@/data.json'
+import Forum from "@/pages/Forum";
+import Category from "@/pages/Category";
 
 const routes = [
   { path: '/',
     name: "Home",
-    component: PageHome
+    component: Home
+  },
+  {
+    path: '/category/:id',
+    name: 'Category',
+    component: Category,
+    props: true
+  },
+  {
+    path: '/forum/:id',
+    name: 'Forum',
+    component: Forum,
+    props: true
   },
   { path: '/thread/:id',
     name: "ThreadShow",
-    component: PageThreadShow,
+    component: ThreadShow,
     props: true,
     beforeRouteEnter (to, from, next) {
       // thread exists?
